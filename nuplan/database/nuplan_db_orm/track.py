@@ -24,6 +24,7 @@ class Track(Base):
     """
 
     __tablename__ = "track"
+    __allow_unmapped__ = True
 
     token: str = Column(sql_types.HexLen8, primary_key=True)
     category_token: str = Column(sql_types.HexLen8, ForeignKey("category.token"), nullable=False)

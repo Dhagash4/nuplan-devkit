@@ -22,7 +22,7 @@ class Scene(Base):
     """
 
     __tablename__ = 'scene'
-
+    __allow_unmapped__ = True
     token: str = Column(sql_types.HexLen8, primary_key=True)
     log_token: str = Column(sql_types.HexLen8, ForeignKey("log.token"), nullable=False)
     name: str = Column(Text)

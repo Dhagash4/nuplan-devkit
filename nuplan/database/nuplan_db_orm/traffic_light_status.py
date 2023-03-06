@@ -22,7 +22,7 @@ class TrafficLightStatus(Base):
     """
 
     __tablename__ = 'traffic_light_status'
-
+    __allow_unmapped__ = True
     token: str = Column(sql_types.HexLen8, primary_key=True)
     lidar_pc_token: str = Column(sql_types.HexLen8, ForeignKey("lidar_pc.token"), nullable=False)
     lane_connector_id: int = Column(Integer)

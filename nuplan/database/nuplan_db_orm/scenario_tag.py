@@ -22,6 +22,7 @@ class ScenarioTag(Base):
     """
 
     __tablename__ = 'scenario_tag'
+    __allow_unmapped__ = True
 
     token: str = Column(sql_types.HexLen8, primary_key=True)
     lidar_pc_token: str = Column(sql_types.HexLen8, ForeignKey("lidar_pc.token"), nullable=False)
